@@ -6,7 +6,8 @@ int main()
   FILE *lista_frutas;
   lista_frutas = fopen("frutas.txt", "w");
   int quantidade;
-  int items = 0;
+  float items;
+  float values[5] = {5.0, 2.3, 3.0, 4.4, 5.5};
 
   printf("Bem-vindo a Fruta Doce Store!\n");
   printf("Aqui voce encontra as melhores frutas da regiao!\n");
@@ -16,16 +17,14 @@ int main()
     printf("Digite o numero correspondente: (Digite 0 para sair)\n");
     scanf("%d", &quantidade);
   }
-
   while (1)
   {
-    printf("1 - Banana\n");
-    printf("2 - Maca\n");
-    printf("3 - Pera\n");
-    printf("4 - Uva\n");
-    printf("5 - Morango\n");
-    printf("0 - Sair\n");
-    printf("Quantidade de frutas compradas: %d\n", items);
+    printf("1 - Banana R$%.2f \n", values[0]);
+    printf("2 - Maca R$%.2f \n", values[1]);
+    printf("3 - Pera R$%.2f \n", values[2]);
+    printf("4 - Uva R$%.2f \n", values[3]);
+    printf("5 - Morango R$%.2f \n", values[4]);
+    printf("Quantidade de frutas compradas: %.2f\n", items);
     userInput();
     system("cls || clear");
     if (quantidade == 0)
@@ -35,32 +34,33 @@ int main()
     }
     else if (quantidade == 1)
     {
-      fprintf(lista_frutas, "Banana\n");
-      items++;
+      fprintf(lista_frutas, "Banana\n %.2f", values[0]);
+      items += values[0];
     }
     else if (quantidade == 2)
     {
-      fprintf(lista_frutas, "Maca\n");
-      items++;
+      fprintf(lista_frutas, "Maca %.2f \n", values[1]);
+      items += values[1];
     }
     else if (quantidade == 3)
     {
-      fprintf(lista_frutas, "Pera\n");
-      items++;
+      fprintf(lista_frutas, "Pera %.2f \n", values[2]);
+      items += values[2];
     }
     else if (quantidade == 4)
     {
-      fprintf(lista_frutas, "Uva\n");
-      items++;
+      fprintf(lista_frutas, "Uva %.2f \n", values[3]);
+      items += values[3];
     }
     else if (quantidade == 5)
     {
-      fprintf(lista_frutas, "Morango\n");
-      items++;
+      fprintf(lista_frutas, "Morango %.2f \n", values[4]);
+      items += values[4];
     }
     else
     {
       printf("Opção inválida!\n");
+      break;
     }
   }
   fclose(lista_frutas);
