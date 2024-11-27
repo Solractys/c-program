@@ -9,23 +9,18 @@ int main()
   float items;
   float values[5] = {5.0, 2.3, 3.0, 4.4, 5.5};
 
-  printf("Bem-vindo a Fruta Doce Store!\n");
-  printf("Aqui voce encontra as melhores frutas da regiao!\n");
-
-  void userInput()
-  {
-    printf("Digite o numero correspondente: (Digite 0 para sair)\n");
-    scanf("%d", &quantidade);
-  }
   while (1)
   {
+    printf("Bem-vindo a Fruta Doce Store!\n");
+    printf("Aqui voce encontra as melhores frutas da regiao!\n");
     printf("1 - Banana R$%.2f \n", values[0]);
     printf("2 - Maca R$%.2f \n", values[1]);
     printf("3 - Pera R$%.2f \n", values[2]);
     printf("4 - Uva R$%.2f \n", values[3]);
     printf("5 - Morango R$%.2f \n", values[4]);
     printf("Quantidade de frutas compradas: %.2f\n", items);
-    userInput();
+    printf("Digite o numero correspondente: (Digite 0 para sair)\n");
+    scanf("%d", &quantidade);
     system("cls || clear");
     if (quantidade == 0)
     {
