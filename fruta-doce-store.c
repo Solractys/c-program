@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <locale.h>
 
-void texto_padrao() {
+void texto_padrao()
+{
   printf("Obrigado por comprar na Fruta Doce Store!\n Sua lista foi salva no arquivo frutas.txt\n");
 }
 
@@ -37,21 +38,23 @@ int main()
       printf("1- Sim | 2- Nao\n");
       scanf("%d", &escolha);
       fflush(stdin);
-      switch(escolha){
-        case 1:
-          fclose(lista_frutas);
-          lista_frutas = fopen("frutas.txt", "r");
-          printf("Resumo da compra: \n");
-           while (fgets(linha, sizeof(linha), lista_frutas)) {
-                    printf("%s", linha);
-                }
-          fclose(lista_frutas);
-          texto_padrao();
-          break;
-        
-        case 2:
-          texto_padrao();
-          break;
+      switch (escolha)
+      {
+      case 1:
+        fclose(lista_frutas);
+        lista_frutas = fopen("frutas.txt", "r");
+        printf("Resumo da compra: \n");
+        while (fgets(linha, sizeof(linha), lista_frutas))
+        {
+          printf("%s", linha);
+        }
+        fclose(lista_frutas);
+        texto_padrao();
+        break;
+
+      case 2:
+        texto_padrao();
+        break;
       }
       break;
     }
